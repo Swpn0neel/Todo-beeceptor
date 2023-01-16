@@ -1,10 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TodoCard = (props) => {
   const { todo } = props;
   const { id, completed, title } = todo;
-  let history = useHistory();
+  let history = useNavigate();
 
   return (
     <div
