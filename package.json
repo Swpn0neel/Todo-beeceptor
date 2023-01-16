@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "todo-beeceptor",
   "version": "1.0.0",
   "description": "React example starter project",
   "keywords": [
@@ -29,5 +29,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": "https://github.com/samyabrata-maji/Todo-beeceptor",
+  "author": "Samya brata Maji <samyabratamaji334@gmail.com>",
+  "license": "MIT",
+  "private": false
 }
