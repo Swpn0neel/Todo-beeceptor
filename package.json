@@ -1,7 +1,7 @@
 {
   "name": "todo-beeceptor",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "A simple To-Do app",
   "keywords": [
     "react",
     "starter"
@@ -30,8 +30,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "repository": "https://github.com/samyabrata-maji/Todo-beeceptor",
-  "author": "Samya brata Maji <samyabratamaji334@gmail.com>",
+  "repository": "https://github.com/Swpn0neel/Todo-beeceptor",
+  "author": "Swapnoneel Saha <swapnoneelok000@gmail.com>",
   "license": "MIT",
   "private": false
 }
