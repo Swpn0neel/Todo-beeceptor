@@ -2,8 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const TodoCard = (props) => {
-  const { todo } = props;
-  const { id, completed, title } = todo;
+  const { id, completed, title } = props;
   let history = useNavigate();
 
   return (
@@ -12,7 +11,7 @@ const TodoCard = (props) => {
         backgroundColor: "grey",
         margin: "10px",
         padding: "15px",
-        width: "150px"
+        width: "150px",
       }}
       onClick={() => history.push(`/todo/${id}`)}
     >
