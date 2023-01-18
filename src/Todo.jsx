@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
 
 const Todo = () => {
   const { id } = useParams();
-
   const [todoDetails, setTodoDetails] = useState();
 
   useEffect(() => {
-    axios.get(`https://my-todo.free.beeceptor.com/todos/${id}`).then((res) => {
-      const responseTodo = res.data;
-      setTodoDetails(responseTodo);
-    });
+    fetch(`https://my-todo.free.beeceptor.com/todos/${id}`)
+      .then((response) => {
+        if (response.ok) return response.json();
+        else throw new Error(response.status);
+      })
+      .then((todo_data) => {
+        setTodoDetails((_) => todo_data);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   }, []);
   const { id: todoId, userId, title, completed } = todoDetails || {};
   return (

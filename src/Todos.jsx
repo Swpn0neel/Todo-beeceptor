@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
 import TodoCard from "./TodoCard";
 
@@ -7,10 +6,20 @@ const Todos = () => {
   const [todos, setTodos] = useState();
 
   useEffect(() => {
-    axios.get(`https://my-todo.free.beeceptor.com/todos`).then((res) => {
-      const responseTodos = res.data;
-      setTodos(responseTodos);
-    });
+    // TODO: REPLACE WITH LIVE URL
+    fetch(`YOUR URL`)
+      .then((response) => {
+        if (response.ok) return response.json();
+        else throw new Error(response.status);
+      })
+      .then((todo_data) => {
+        // TODO: REMOVE THIS LOG
+        console.log(todo_data);
+        setTodos((_) => todo_data);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   }, []);
 
   console.log(todos);
@@ -19,7 +28,12 @@ const Todos = () => {
       {todos ? (
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           {todos.slice(0, 10).map((todo) => (
-            <TodoCard key={todo.id} todo={todo} />
+            <TodoCard
+              key={todo.id}
+              id={todo.id}
+              title={todo.title}
+              completed={todo.completed}
+            />
           ))}
         </div>
       ) : (
