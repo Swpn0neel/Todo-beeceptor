@@ -7,7 +7,7 @@ const Todo = () => {
   const [todoDetails, setTodoDetails] = useState();
 
   useEffect(() => {
-    fetch(`https://my-todo.free.beeceptor.com/todo/${id}`)
+    fetch(`https://my-todo.proxy.beeceptor.com/todo/${id}`)
       .then((response) => {
         if (response.ok) return response.json();
         else throw new Error(response.status);
