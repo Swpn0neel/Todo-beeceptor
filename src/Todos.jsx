@@ -7,7 +7,7 @@ const Todos = () => {
 
   useEffect(() => {
     // TODO: REPLACE WITH LIVE URL
-    fetch(`https://my-todo.proxy.beeceptor.com`)
+    fetch(`https://my-todo.proxy.beeceptor.com/todo/${id}`)
       .then((response) => {
         if (response.ok) return response.json();
         else throw new Error(response.status);
