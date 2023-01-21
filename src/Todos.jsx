@@ -6,7 +6,6 @@ const Todos = () => {
   const [todos, setTodos] = useState();
 
   useEffect(() => {
-    // TODO: REPLACE WITH LIVE URL
     fetch(`https://my-todo.free.beeceptor.com/todos`)
       .then((response) => {
         if (response.ok) return response.json();

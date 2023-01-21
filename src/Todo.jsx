@@ -7,7 +7,7 @@ const Todo = () => {
   const [todoDetails, setTodoDetails] = useState();
 
   useEffect(() => {
-    fetch(`https://my-todo.free.beeceptor.com/todos/${id}`)
+    fetch(`https://my-todo.proxy.beeceptor.com/todo/${id}`)
       .then((response) => {
         if (response.ok) return response.json();
         else throw new Error(response.status);
@@ -24,7 +24,7 @@ const Todo = () => {
     <div>
       {todoDetails ? (
         <div>
-          <h1> {`Todo id: ${todoId}`} </h1>
+          <h1> {`Todo id: ${id}`} </h1>
           <h1> {`Todo userId: ${userId}`} </h1>
           <h1> {`Todo title: ${title}`} </h1>
           <h1> {`Todo completed: ${completed}`} </h1>
