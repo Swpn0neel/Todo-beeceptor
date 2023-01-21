@@ -6,23 +6,20 @@ const Todos = () => {
   const [todos, setTodos] = useState();
 
   useEffect(() => {
-    // TODO: REPLACE WITH LIVE URL
-    fetch(`https://my-todo.proxy.beeceptor.com/todo/${id}`)
+    fetch(`https://my-todo.free.beeceptor.com/todos`)
       .then((response) => {
         if (response.ok) return response.json();
         else throw new Error(response.status);
       })
       .then((todo_data) => {
         // TODO: REMOVE THIS LOG
-        console.log(todo_data);
-        setTodos((_) => todo_data);
+        setTodos((_) => todo_data.data);
       })
       .catch((error) => {
         console.error(error.message);
       });
   }, []);
 
-  console.log(todos);
   return (
     <>
       {todos ? (
