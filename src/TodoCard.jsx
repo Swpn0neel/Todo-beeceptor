@@ -5,6 +5,10 @@ const TodoCard = (props) => {
   const { id, completed, title } = props;
   let history = useNavigate();
 
+  const pushRoute = () => {
+    history(`/todo/${id}`)
+  }
+
   return (
     <div
       style={{
@@ -13,7 +17,7 @@ const TodoCard = (props) => {
         padding: "15px",
         width: "150px",
       }}
-      onClick={() => history.push(`/todo/${id}`)}
+      onClick={pushRoute}
     >
       <h4> {title} </h4>
       <h6> {`Completed: ${completed}`} </h6>
